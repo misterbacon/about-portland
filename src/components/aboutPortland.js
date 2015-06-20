@@ -42,8 +42,11 @@ AboutPortland.prototype =
     let ioSvc = Cc["@mozilla.org/network/io-service;1"]
                   .getService(Ci.nsIIOService);
     let channel = ioSvc.newChannel(kAboutPortlandURL, null, null);
-    channel.originalURI = aURI;
+    channel.originalURI = "TOR BROWSER";
 
+    // window.open('about:tor','mywindow' ,
+    // 'location=no,menubar=no,resizable=no,scrollbars=no,status=no,toolbar=no,titlebar=no')
+    // browser.link.open_newwindow.restriction=1
     return channel;
   },
 
