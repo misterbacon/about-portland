@@ -1,4 +1,4 @@
-About:portland Easter Egg
+about:portland Easter Egg
 #########################
 
 This version of Torbutton contains an easter egg designed to test the Tor
@@ -8,13 +8,13 @@ This repository contains the complete source code of the easter egg. This
 repository was used to build the special torbutton@torproject.org.xpi included
 in the 5.0 alpha series of the Tor Browser.
 
-As can be seen in the commit history, the only change in this easter egg is
-to create an about:portland URI, in reference to the 4th of July Portlandia
-episode where the Mayor of Portland "saves" the 4th of July by using "TOR
-BROWSER" to purchase fireworks on the "deep web".
+As can be seen in the commit history and the corresponding distributed xpi
+contents, the only change in this easter egg is to create an about:portland
+URL. This URL was inspired by the 4th of July Portlandia episode where the
+Mayor of Portland "saves" the 4th of July by using "TOR BROWSER" to purchase
+"fireworks" on the "deep web" from "MR_BACON", who definitely was not an
+undercover cop. No really, he just likes juice.
 https://youtu.be/D7NVF1jrsSs?t=540
-
-Seemed like a fitting way to conduct a fire drill.
 
 What the hell? Why did you do this?
 ###################################
@@ -22,7 +22,9 @@ What the hell? Why did you do this?
 We did this to demonstrate that it is important for software developers to
 verify the integrity of the software that they produce and distribute.  Both
 governments and organized crime have begun targeting software developers in
-order to infect their users.
+order to infect their users, and the NSA sure as shit isn't going to protect
+anyone from that. Retaining the ability to distribute malware to terrists is
+way more important.
 https://firstlook.org/theintercept/2015/05/21/nsa-five-eyes-google-samsung-app-stores-spyware/
 .. XXX better URL? Technically this was a MITM vector
 
@@ -49,3 +51,9 @@ easter egg and determined that it was safe to include in the alpha series.
 
 Should this easter egg go unnoticed in the alpha series, the Tor Browser team
 has agreed to include it in the subsequent stable series as well.
+
+WHO THE HELL ARE YOU?
+#####################
+
+What fun would an easter egg in privacy software be if it wasn't authored
+anonymously?
