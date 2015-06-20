@@ -55,25 +55,20 @@ AboutPortland.prototype =
     var win = wm.getMostRecentWindow("navigator:browser");
     
     // if !popup.. (opener or name??)
-    if (!win.document.defaultView.opener) {
-      // log current window.name
-      logger.eclog(4, "window.name: "+win.name+", view name: "+win.document.defaultView.name); 
+    //if (!win.document.defaultView.opener)
+    // log current window.name
+    logger.eclog(4, "window.name: "+win.name+", view name: "+win.document.defaultView.name); 
 
-      // set pref browser.link.open_newwindow.restriction=1
-      prefs.setIntPref("browser.link.open_newwindow.restriction", 1);
-      let popup = win.open(kAboutPortlandURL,'mywindow',
-              'location=no,menubar=no,resizable=no,scrollbars=no,status=no,toolbar=no,titlebar=no')
-      // XXX: This doesn't work :(
-      popup.document.title = "TOR BROWSER";
+    // set pref browser.link.open_newwindow.restriction=1
+    prefs.setIntPref("browser.link.open_newwindow.restriction", 1);
+    let popup = win.open(kAboutPortlandURL,'mywindow',
+            'location=no,menubar=no,resizable=no,scrollbars=no,status=no,toolbar=no,titlebar=no')
+    // XXX: This doesn't work :(
+    popup.document.title = "TOR BROWSER";
 
-      // cancel current load.
-      channel.cancel(0x804b0002); // NS_BINDING_ABORTED
-      prefs.setIntPref("browser.link.open_newwindow.restriction", 0);
-    } else {
-      logger.eclog(4, "window.name: "+win.name+", view name: "+win.document.defaultView.name+", opener name: "+win.document.defaultView.opener.name); 
-      // unset pref..
-      prefs.setIntPref("browser.link.open_newwindow.restriction", 0);
-    }
+    // cancel current load.
+    channel.cancel(0x804b0002); // NS_BINDING_ABORTED
+    prefs.setIntPref("browser.link.open_newwindow.restriction", 0);
 
     return channel;
   },
