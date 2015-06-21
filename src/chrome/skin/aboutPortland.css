@@ -1,0 +1,109 @@
+
+@import url("BOOTSTRA.386/css/bootstrap.css");
+
+body {
+  background: #424242;
+}
+#top {
+  margin-top: 20px;
+}
+#search {
+  font-size: 250%;
+  color: #EEE;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  height: 200%;
+  width: 100%;
+}
+#search-label {
+  font-size: 120%;
+  height: 60px;
+  line-height: 60px;
+  margin-right: 1px;
+}
+#deep-web-search-input {
+  background-color: #888;
+  padding-left: 2%;
+  width: 110%;
+  height: 60px;
+}
+#results {
+  font-size: 80%;
+  line-height: 95%;
+}
+.cthunk {
+  border-width: 4px;
+  border-color: #DDD;
+  border-style: groove none ridge none;
+}
+.shouting {
+  text-transform: uppercase;
+}
+#warez {
+  text-align: left;
+  color: #FFF;
+  height: 500px;
+  padding-left: 25%;
+  // overflow-y: scroll;
+}
+li > a {
+  font-size: 2.0em;
+  line-height: 90%;
+}
+li, #warez a {
+  transition: color 400ms;
+}
+li:hover, li:focus, li:active, #warez :hover, #warez :focus {
+  color: green;
+}
+#warez a:hover, #warez a:focus, #explosives a:focus {
+  background: #424242;
+  color: inherit;
+}
+.modal-firepower {
+  background-color: #888;
+  width: 60%;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+#firepower {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 2.8em;
+  line-height: 80%;
+  color: #FFF;
+}
+#circle-bomb {
+  width: 50%;
+  height: 50%;
+}
+#enterchatbtn {
+  font-size: 75%;
+  align-content: center;
+}
+#enterchat {
+  align-content: center;
+}
+iframe.embedded {
+  width: 100%;
+  border: none;
+}
+.bigger {
+  font-size: 1.6em;
+  padding: 0px 50px 0px 50px;
+}
+
+
+::-webkit-input-placeholder {
+  color: #DDD;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #DDD;
+}
+::-moz-placeholder {  /* Firefox 19+ */
+  color: #DDD;
+  opacity: 1;
+}
+:-ms-input-placeholder {
+  color: #DDD;
+}
