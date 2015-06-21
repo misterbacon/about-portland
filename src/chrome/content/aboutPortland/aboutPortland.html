@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--
+         Dirty hack to make the application title be simply "TOR BROWSER",
+         instead of "TOR BROWSER - Tor Browser" on *nix systems.
+      -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TOR BROWSER&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</title>
+
+    <!--
+    <link rel="stylesheet" type="text/css" media="all"
+          href="/skin/BOOTSTRA.386/dist/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" media="all"
+          href="/skin/BOOTSTRA.386/dist/css/bootstrap-theme.css" />
+    -->
+    <link rel="stylesheet" type="text/css" media="all"
+          href="/skin/aboutPortland.css" />
+    <script type="text/javascript"
+            src="/skin/BOOTSTRA.386/js/jquery-2.1.4.js"></script>
+    <script type="text/javascript"
+            src="/skin/BOOTSTRA.386/js/bootstrap.js"></script>
+    <script type="text/javascript"
+            src="/content/aboutPortland/about-portland.js"></script>
+    <script type="text/javascript">
+      // $('#explosives').on('click', function (event) {
+      //     $('#firepower').modal('show');
+      // });
+
+      function displayOrHide(element) {
+        try {
+          e = document.getElementById(element);
+
+          if (e.style.display === 'none') {
+            document.getElementById(element).style.display = 'block';
+          } else if (e.style.display === 'block') {
+            document.getElementById(element).style.display = 'none';
+          }
+        } catch (e) {
+          window.alert(e);
+        }
+      }
+
+    </script>
+  </head>
+  <body data-twttr-rendered="true">
+    <div id="top" class="container-fluid">
+
+    <div class="container">
+      <div id="search" class="container">
+        <div class="row">
+          <form class="form-horizontal"
+                id="deep-web-search-form"
+                name="deep-web-search-form"
+                method="POST">
+            <div id="search-label" class="col-lg-3">
+              <p>SEARCH:</p>
+            </div>
+            <div class="col-lg-8">
+              <input class="form-control"
+                     form="deep-web-search-form"
+                     name="deep-web-search-input"
+                     id="deep-web-search-input"
+                     value=""
+                     autocomplete="off"
+                     type="text"
+                     placeholder=""></input>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div id="results" class="shouting container">
+        <p>
+          13,941 RESULTS FOUND<br />
+          CLOSED IP: 719.23.9001.89174.561953221362<br />
+          USER: MAYOR_9000<br />
+        </p>
+      </div>
+      </div>
+    </div> <!-- end top -->
+    <p class="cthunk" />
+
+    <div id="middle" class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12">
+          <ul id="warez" class="shouting collapsible">
+          </ul>
+        </div>
+      </div>
+        
+      <!-- FIREPOWER MODAL -->
+      <div id="firepower" class="modal fade" data-backdrop="false">
+        <div id="firepowerdialog" class="modal-firepower modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="bigger close" data-dismiss="modal"
+                      aria-hidden="true">&times</button>
+              <br />
+            </div>
+            <div class="shouting modal-body">
+              <p><strong>
+                  WANT FIREPOWER THAT WILL MAKE TOTAL DESTROY?
+              </strong></p>
+              <p><img src="/content/aboutPortland/circle-bomb.gif"
+                      alt="BAM BAM BAM" id="circle-bomb" /></p>
+            <div class="modal-footer">
+              <div id="enterchat" class="col-lg-10">
+                <button id="enterchatbtn" class="btn btn-danger" data-dismiss="modal"
+                        aria-hidden="true" href="about:bacon">Enter Encrypted Chat</button>
+              </div>
+            </div>
+            <br />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    </div> <!-- end middle -->
+
+    <div id="bottom">
+    </div> <!-- end bottom -->
+
+  </body>
+</html>
