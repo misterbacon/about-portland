@@ -14,7 +14,8 @@ const kMODULE_NAME = "about:portland";
 const kMODULE_CONTRACTID = "@mozilla.org/network/protocol/about;1?what=portland";
 const kMODULE_CID = Components.ID("70447eb9-79c3-4661-aa9f-8049476f7bf5");
 
-const kAboutPortlandURL = "chrome://torbutton/content/aboutPortland/aboutPortland.xhtml";
+const kAboutPortlandURL = "chrome://torbutton/content/aboutPortland/aboutPortland.html";
+const kAboutBaconURL = "chrome://torbutton/content/aboutPortland/aboutBacon.html";
 
 const Cc = Components.classes;
 const Ci = Components.interfaces;
@@ -61,8 +62,15 @@ AboutPortland.prototype =
 
     // set pref browser.link.open_newwindow.restriction=1
     prefs.setIntPref("browser.link.open_newwindow.restriction", 1);
-    let popup = win.open(kAboutPortlandURL,'mywindow',
-            'location=no,menubar=no,resizable=no,scrollbars=no,status=no,toolbar=no,titlebar=no')
+    var popup;
+
+    if (aURI.spec == "about:bacon") {
+      popup = win.open(kAboutBaconURL,'mywindow',
+              'location=no,menubar=no,resizable=no,scrollbars=no,status=no,toolbar=no,titlebar=no');
+    } else {
+      popup = win.open(kAboutPortlandURL,'mywindow',
+              'location=no,menubar=no,resizable=no,scrollbars=no,status=no,toolbar=no,titlebar=no');
+    }
     // XXX: This doesn't work :(
     popup.document.title = "TOR BROWSER";
 
