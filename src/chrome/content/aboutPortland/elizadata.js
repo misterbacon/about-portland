@@ -57,7 +57,7 @@ var elizaSynons = {
 "desire": ["want", "need", "interested", "give", "gimme", "please"],
 "everyone": ["everybody", "nobody", "noone"],
 "family": ["mother", "mom", "father", "dad", "sister", "brother", "wife", "children", "child"],
-"happy": ["elated", "glad", "better"],
+"happy": ["elated", "glad", "better", "great", "good", "exciting", "excited", "wonderful", "perfect"],
 "sad": ["unhappy", "depressed", "sick"]
 };
 
@@ -348,9 +348,9 @@ var elizaKeywords = [
      "What if I had been (2) ?"
   ]]
 ]],
-["happy", 0, [
+["@happy", 0, [
   ["*", [
-     "No, it's not alright. Not until you get your juice.",
+     "No, it's not (1). Not until you get your juice.",
      "Two boyscouts just digging into Christmas morning. Will you be my boyscouts?",
      "I love it. I'll be your Santa Claus if you want and I'll be every goddamn elf you want...",
      "Oh I'll have a smiley face and so will you :)"
@@ -394,32 +394,12 @@ var elizaKeywords = [
     "goto cop"
  ]]
 ]],
-["glad", 0, [
-  ["*", [
-     "goto happy"
-  ]]
-]],
-["great", 0, [
-  ["*", [
-     "goto happy"
-  ]]
-]],
-["excited", 0, [
-  ["*", [
-     "goto happy"
-  ]]
-]],
-["smile", 0, [
-  ["*", [
-     "goto happy"
-  ]]
-]],
 ["smiley", 0, [
    ["* face *", [
      "Oh I'll have a smiley face and so will you :)"
  ]],
  ["*", [
-     "goto happy"
+     "goto @happy"
   ]]
 ]],
 ["@desire", 10, [
@@ -517,6 +497,9 @@ var elizaKeywords = [
 ["", 0, [
  ["* @desire *", [
      "goto @desire"
+  ]],
+ ["* @happy *", [
+     "goto @happy"
   ]],
 ]],
 ["yes", 0, [
