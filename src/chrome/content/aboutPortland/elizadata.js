@@ -54,7 +54,7 @@ var elizaSynons = {
 "be": ["am", "is", "are", "was"],
 "belief": ["feel", "think", "believe", "wish"],
 "cannot": ["can't"],
-"desire": ["want", "need", "interested", "give", "gimme", "please"],
+"desire": ["want", "need", "interested", "give", "gimme", "please", "have"],
 "everyone": ["everybody", "nobody", "noone"],
 "family": ["mother", "mom", "father", "dad", "sister", "brother", "wife", "children", "child"],
 "happy": ["elated", "glad", "better", "great", "good", "exciting", "excited", "wonderful", "perfect"],
@@ -537,6 +537,8 @@ var elizaKeywords = [
  ["*", [
      "goto browser",
      "Relax boyscout, I won't backdoor you unless you want. Would you like some juice?",
+     "I wonder if our browsers are different than the official source code. Did anyone check the official binaries?",
+     "Some say the price of freedom is eternal vigilance.",
      "There's nothing bad in my backdoor but I'll be your Santa Claus if you want and I'll be every goddamn elf you want.",
   ]]
 ]],
@@ -544,6 +546,7 @@ var elizaKeywords = [
  ["*", [
      "I checked my deep dark deep web browser by compiling it myself. I built the same browser as the official binaries. Did anyone check those?",
      "I wonder if our browsers are different than the official source code. Did anyone check the official binaries?",
+     "Some say the price of freedom is eternal vigilance.",
      "The deep dark deep web is built using reproducible technology. It's science, bitch."
   ]]
 ]],
@@ -569,10 +572,10 @@ var elizaKeywords = [
      "The deep dark deep web has everything!",
  ]],
  ["* dark * deep *", [
-     "The deep dark deep web is the darkest deepest web of the entire dark deep dark web.",
+     "The deep dark deep web is the darkest deepest web of the entire deep web.",
  ]],
  ["* deep * dark *", [
-     "The dark deep dark web is the deepest darkest web of the entire deep dark deep web.",
+     "The dark deep dark web is the deepest darkest web of the entire dark web.",
  ]],
  ["*", [
      "Everyone knows that the deep dark deep web has so much more stuff than the regular web.",
@@ -584,6 +587,11 @@ var elizaKeywords = [
  ]],
  ["*", [
     "goto web"
+ ]]
+]],
+["fireworks", 10, [
+ ["* @desire *", [
+    "Shit, we got fireworks. This is the deep dark deep web. We got guns, we got drugs, we got hookers. We got... you name it, we got it!"
  ]]
 ]],
 ["url", 10, [
