@@ -1,6 +1,13 @@
 
 @import url("BOOTSTRA.386/css/bootstrap.css");
 
+@font-face {
+  font-family: 'DOS';
+  src: local('☺'), url('profontwindows-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   background: #424242;
 }

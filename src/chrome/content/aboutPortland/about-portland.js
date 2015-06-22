@@ -134,5 +134,5 @@ window.onload = function () {
       }
     });
 
-  typewriter('deep-web-search-input', '"deep web fireworks"');
+  typewriter('deep-web-search-input', '“deep web fireworks”');
 };
