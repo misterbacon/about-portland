@@ -22,7 +22,7 @@ function autoCloseAlert(selector, closeDelay) {
 function typewriter (element, text) {
   var charCount = text.length;
   var currentCount = 0;
-  var speed = 180; // How fast should it type?
+  var speed = 80; // How fast should it type?
   var $input = document.getElementById(element);
 
   function writeLetter () {
@@ -45,9 +45,23 @@ function typewriter (element, text) {
   var timerId = setInterval(writeLetter, speed);
 };
 
+// CARGO CULT FTW!
+function getRandomSubarray(arr, size) {
+    var shuffled = arr.slice(0), i = arr.length, min = i - size, temp, index;
+    while (i-- > min) {
+        index = Math.floor((i + 1) * Math.random());
+        temp = shuffled[index];
+        shuffled[index] = shuffled[i];
+        shuffled[i] = temp;
+    }
+    return shuffled.slice(min);
+}
+
 function populateSearchResults () {
   var query = document.getElementById('deep-web-search-input').value;
-  var currentWarez = [];
+  var currentWarez = [
+    "EXPLOSIVES (GENERAL)"
+  ];
   var fireyThings = [
     "AA BATTERIES (EXPLODY)",
     "BATTERIES (NON-EXPLODY)",
@@ -56,7 +70,6 @@ function populateSearchResults () {
     "CROSSFIRE MK1 (UKRAINE)",
     "DOGECOIN FIRESALE",
     "DRUGS (COMBUSTIBLE)",
-    "EXPLOSIVES (GENERAL)",
     "FIREANT SOURCECODE (NSA LEAKED)",
     "HANDMADE ALPACA SOCKS (CHILÉ)",
     "INCENSER NSA/GCHQ DATATAP ACCESS",
@@ -106,11 +119,12 @@ function populateSearchResults () {
 
   if (query.toLowerCase().match("fire")) {
     window.console.log('Populating search results with firey things...');
-    fireyThings = fireyThings.forEach(addToWarez);
+    fireyThings.forEach(addToWarez);
   } else {
     window.console.log('Populating search results with sketchy things having to do with "'
                        + query + '"...');
-    sketchThings = sketchThings.forEach(addToWarez);
+    var results = getRandomSubarray(sketchThings, 2+Math.random()*15);
+    results.forEach(addToWarez);
   };
 
   replaceWarez(currentWarez);
