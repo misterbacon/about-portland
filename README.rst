@@ -74,3 +74,5 @@ for licensing information.
 
 # Ha! Found their font!
 http://tobiasjung.name/profont/profontwindows-webfont.woff
+
+.. XXX: We need a credits section for all of the free deps we use
