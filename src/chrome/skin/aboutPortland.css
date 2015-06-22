@@ -23,11 +23,27 @@ body {
   width: 100%;
 }
 #search-label {
-  font-size: 120%;
+  font-size: 40px;
   height: 60px;
   line-height: 60px;
   margin-right: 1px;
+  margin-left: 0px;
 }
+
+.container {
+  margin-left: 0px;
+  padding-left: 0px;
+}
+
+.container-fluid {
+  margin-left: 5px;
+  padding-left: 5px;
+}
+
+.col-xs-4 {
+  width: 20%;
+}
+
 #deep-web-search-input {
   background-color: #888;
   padding-left: 2%;
@@ -63,7 +79,7 @@ li, #warez a {
 li:hover, li:focus, li:active, #warez :hover, #warez :focus {
   color: green;
 }
-#warez a:hover, #warez a:focus, #explosives a:focus {
+#warez a:hover, #warez a:focus, .explosives a:focus {
   background: #424242;
   color: inherit;
 }
@@ -122,19 +138,19 @@ iframe.embedded {
 }
 
 @media (min-width: 640px) and (max-width: 980px) {
-  #search, #search-label, #deep-web-search-input, #encrypted-correspondence { font-size: 175%; }
-  #deep-web-search-input { height: 55px; }
+  #search, #search-label, #deep-web-search-input, #encrypted-correspondence { font-size: 30px; }
+  #deep-web-search-input { height: 50px; }
   li > a { font-size: 1.8em; }
 }
 
-@media (min-width: 480px) and (max-width: 640px) {
-  #search, #search-label, #deep-web-search-input, #encrypted-correspondence { font-size: 145%; }
-  #deep-web-search-input { height: 50px; }
+@media (min-width: 50px) and (max-width: 640px) {
+  #search, #search-label, #deep-web-search-input, #encrypted-correspondence { font-size: 20px; }
+  #deep-web-search-input { height: 40px; }
   li > a { font-size: 1.6em; }
 }
 
 @media (min-width: 50px) and (max-width: 480px), handheld {
-  #search, #search-label, #deep-web-search-input, #encrypted-correspondence { font-size: 115%; }
+  #search, #search-label, #deep-web-search-input, #encrypted-correspondence { font-size: 15px; }
   #deep-web-search-input { height: 40px; }
   li > a { font-size: 1.4em; }
   #results { font-size: 70%;}
