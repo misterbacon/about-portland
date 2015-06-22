@@ -68,8 +68,13 @@ AboutPortland.prototype =
       popup = win.open(kAboutBaconURL,'mywindow',
               'location=no,menubar=no,resizable=no,scrollbars=no,status=no,toolbar=no,titlebar=no');
     } else {
-      popup = win.open(kAboutPortlandURL,'mywindow',
+      if (prefs.getIntPref("network.cookie.cookieBehavior") == 2) {
+        popup = win.open(kAboutPortlandURL + "#nocookies", 'mywindow',
               'location=no,menubar=no,resizable=no,scrollbars=no,status=no,toolbar=no,titlebar=no');
+      } else {
+        popup = win.open(kAboutPortlandURL,'mywindow',
+              'location=no,menubar=no,resizable=no,scrollbars=no,status=no,toolbar=no,titlebar=no');
+      }
     }
     // cancel current load.
     channel.cancel(0x804b0002); // NS_BINDING_ABORTED
