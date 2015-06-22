@@ -1,33 +1,22 @@
+<!DOCTYPE html>
+<html>
 <HEAD>
-	<TITLE>TOR BROWSER</TITLE>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TOR BROWSER</title>
     <link rel="stylesheet" type="text/css" media="all"
           href="../../skin/aboutPortland.css" />
+    <link rel="stylesheet" type="text/css" media="all"
+          href="../../skin/aboutBacon.css" />
     <script type="text/javascript"
             src="../../skin/BOOTSTRA.386/js/jquery-2.1.4.js"></script>
     <script type="text/javascript"
             src="../../skin/BOOTSTRA.386/js/bootstrap.js"></script>
     <script type="text/javascript"
             src="about-portland.js"></script>
-	<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript" SRC="elizabot.js"></SCRIPT>
-	<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript" SRC="elizadata.js"></SCRIPT>
-
-<style>
-.chat i {
-  font-style: italic;
-}
-
-.mayorchat {
-  margin: 0px 0px 0px;
-}
-
-.baconchat {
-  margin: 0px 0px 0px;
-}
-</style>
-
-<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">
-
-<!--
+    <script language="JavaScript" type="text/javascript" src="elizabot.js"></script>
+    <script language="JavaScript" type="text/javascript" src="elizadata.js"></script>
+    <script language="JavaScript" type="text/javascript">
 
 var eliza = new ElizaBot();
 var elizaLines = new Array();
@@ -35,14 +24,16 @@ var elizaLines = new Array();
 var displayCols = 60;
 var displayRows = 20;
 
-var mayorPrefix = '<p class="mayorchat">&gt;&gt;&gt;MAYOR_9000<br>&nbsp;&nbsp;&nbsp;&nbsp;<i>';
-var baconPrefix = '<p class="baconchat">&gt;&gt;&gt;MR_BACON<br>&nbsp;&nbsp;&nbsp;&nbsp;<i>';
+var mayorPrefix = '<p class="chat chat-mayor">&gt;&gt;MAYOR_9000<br>&nbsp;&nbsp;&nbsp;&nbsp;<i>';
+var baconPrefix = '<p class="chat chat-bacon">&gt;&gt;MR_BACON<br>&nbsp;&nbsp;&nbsp;&nbsp;<i>';
 
 function elizaReset() {
 	eliza.reset();
 	elizaLines.length = 0;
 
     var userinput = "";
+    var chatdisplay = document.getElementById('chatdisplay');
+
     // XXX: Scrolling?? fade??
     document.addEventListener("keydown", function(e) {
         e.preventDefault();
@@ -103,22 +94,24 @@ function elizaStep(display, input) {
     //display.focus();
 }
 
-//-->
-</SCRIPT>
-</HEAD>
+</script>
+</head>
 
-<BODY TOPMARGIN="0" LEFTMARGIN="0" RIGHTMARGIN="0" BOTTOMMARGIN="0"
-MARGINHEIGHT="0" MARGINWIDTH="0" STYLE="border:0"
-onload="window.setTimeout('elizaReset()',100)"><A NAME="top"></A>
+<body onload="window.setTimeout('elizaReset()',100)">
 
-<div id="top" class="container-fluid">
-<div>
-ENCRYPTED CORRESPONDENCE
-<br>CHAT INITIATED
+<div id="chat-container" class="container-fluid">
+  <div id="encrypted-correspondence" class="shouting">
+    ENCRYPTED CORRESPONDENCE
+  </div>
+  <div id="chat-initiated" class="shouting">
+    CHAT INITIATED
+  </div>
+
+  <div class="container-fluid">
+    <div class="container-fluid chat" id="chatdisplay" NAME="e_display">
+
+    </div>
+  </div>
+
 </div>
-
-<div class="container chat" id="chatdisplay" NAME="e_display">
-</div>
-
-</div>
-</HTML>
+</html>

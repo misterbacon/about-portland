@@ -14,7 +14,7 @@ body {
 #top {
   margin-top: 20px;
 }
-#search {
+#search, #encrypted-correspondence {
   font-size: 250%;
   color: #EEE;
   padding-top: 1px;
@@ -122,19 +122,19 @@ iframe.embedded {
 }
 
 @media (min-width: 640px) and (max-width: 980px) {
-  #search, #search-label, #deep-web-search-input { font-size: 175%; }
+  #search, #search-label, #deep-web-search-input, #encrypted-correspondence { font-size: 175%; }
   #deep-web-search-input { height: 55px; }
   li > a { font-size: 1.8em; }
 }
 
 @media (min-width: 480px) and (max-width: 640px) {
-  #search, #search-label, #deep-web-search-input { font-size: 145%; }
+  #search, #search-label, #deep-web-search-input, #encrypted-correspondence { font-size: 145%; }
   #deep-web-search-input { height: 50px; }
   li > a { font-size: 1.6em; }
 }
 
 @media (min-width: 50px) and (max-width: 480px), handheld {
-  #search, #search-label, #deep-web-search-input { font-size: 115%; }
+  #search, #search-label, #deep-web-search-input, #encrypted-correspondence { font-size: 115%; }
   #deep-web-search-input { height: 40px; }
   li > a { font-size: 1.4em; }
   #results { font-size: 70%;}
