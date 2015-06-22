@@ -399,6 +399,11 @@ var elizaKeywords = [
      "goto happy"
   ]]
 ]],
+["great", 0, [
+  ["*", [
+     "goto happy"
+  ]]
+]],
 ["excited", 0, [
   ["*", [
      "goto happy"
@@ -548,7 +553,7 @@ var elizaKeywords = [
 ["backdoor", 10, [
  ["*", [
      "goto browser",
-     "Relax boyscout, I didn't backdoor you. Would you like some juice?",
+     "Relax boyscout, I won't backdoor you unless you want. Would you like some juice?",
      "There's nothing bad in my backdoor but I'll be your Santa Claus if you want and I'll be every goddamn elf you want.",
   ]]
 ]],

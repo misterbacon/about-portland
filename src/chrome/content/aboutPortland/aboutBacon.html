@@ -12,9 +12,16 @@
 	<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript" SRC="elizadata.js"></SCRIPT>
 
 <style>
-.chat > i {
-  font-family: Helvetica;
+.chat i {
   font-style: italic;
+}
+
+.mayorchat {
+  margin: 0px 0px 0px;
+}
+
+.baconchat {
+  margin: 0px 0px 0px;
 }
 </style>
 
@@ -28,6 +35,9 @@ var elizaLines = new Array();
 var displayCols = 60;
 var displayRows = 20;
 
+var mayorPrefix = '<p class="mayorchat">&gt;&gt;&gt;MAYOR_9000<br>&nbsp;&nbsp;&nbsp;&nbsp;<i>';
+var baconPrefix = '<p class="baconchat">&gt;&gt;&gt;MR_BACON<br>&nbsp;&nbsp;&nbsp;&nbsp;<i>';
+
 function elizaReset() {
 	eliza.reset();
 	elizaLines.length = 0;
@@ -39,18 +49,18 @@ function elizaReset() {
         // Enter is pressed
         if (e.key == "Backspace") {
            userinput = userinput.substring(0, userinput.length-1);
-  	       chatdisplay.innerHTML = elizaLines.join('<br>') + "<br>>>>MAYOR_9000<br>&nbsp;&nbsp;&nbsp;&nbsp;<i>" + userinput + "</i>";
+  	       chatdisplay.innerHTML = elizaLines.join('') + mayorPrefix + userinput + "</i></p>";
         } else if (e.key == "Enter") {
            //window.alert(userinput);
            elizaStep(chatdisplay, userinput);
            userinput = "";
         } else if (e.key.length == 1) {
           if (userinput == "") {
-	        chatdisplay.innerHTML = elizaLines.join('<br>') + "<br>>>>MAYOR_9000<br>&nbsp;&nbsp;&nbsp;&nbsp;<i>" + e.key + "</i>";
+	        chatdisplay.innerHTML = elizaLines.join('') + mayorPrefix + e.key + "</i></p>";
             userinput += e.key;
           } else {
             userinput += e.key;
-  	        chatdisplay.innerHTML = elizaLines.join('<br>') + "<br>>>>MAYOR_9000<br>&nbsp;&nbsp;&nbsp;&nbsp;<i>" + userinput + "</i>";
+  	        chatdisplay.innerHTML = elizaLines.join('') + mayorPrefix + userinput + "</i></p>";
           }
         }
     }, false);
@@ -62,9 +72,8 @@ function elizaStep(display, input) {
 		return;
 	}
 	else if (input != '') {
-		var rpl ='>>>MR_BACON<br>&nbsp;&nbsp;&nbsp;&nbsp;<i>' + eliza.transform(input) + "</i>";
-		var usr = '>>>MAYOR_9000';
-        elizaLines.push(usr+"<br>&nbsp;&nbsp;&nbsp;&nbsp;<i>"+input+"</i>");
+		var rpl = baconPrefix + eliza.transform(input) + "</i></p>";
+        elizaLines.push(mayorPrefix+input+"</i></p>");
 		elizaLines.push(rpl);
 		//elizaLines.push(usr);
 		// display nicely
@@ -81,16 +90,15 @@ function elizaStep(display, input) {
 		elizaLines = temp.reverse();
         */
         setTimeout(function () {
-   	      display.innerHTML = elizaLines.join('<br>');
-          display.innerHTML += "<br>&nbsp;&nbsp;&nbsp;&nbsp;";
+   	      display.innerHTML = elizaLines.join('');
           display.focus();
         }, Math.random()*1000+250);
 	}
 	else if (elizaLines.length == 0) {
 		// no input and no saved lines -> output initial
-		var initial = '>>>MR_BACON<br>&nbsp;&nbsp;&nbsp;&nbsp;<i>' + eliza.getInitial() + "</i>";
+		var initial = baconPrefix + eliza.getInitial() + "</i></p>";
 		elizaLines.push(initial);
-		display.innerHTML = initial + '<br>';
+		display.innerHTML = initial;
 	}
     //display.focus();
 }
