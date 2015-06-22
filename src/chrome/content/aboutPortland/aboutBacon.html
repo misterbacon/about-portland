@@ -6,6 +6,8 @@
     <title>TOR BROWSER</title>
     <link rel="stylesheet" type="text/css" media="all"
           href="../../skin/aboutPortland.css" />
+    <link rel="stylesheet" type="text/css" media="all"
+          href="../../skin/aboutBacon.css" />
     <script type="text/javascript"
             src="../../skin/BOOTSTRA.386/js/jquery-2.1.4.js"></script>
     <script type="text/javascript"
@@ -15,20 +17,6 @@
     <script language="JavaScript" type="text/javascript" src="elizabot.js"></script>
     <script language="JavaScript" type="text/javascript" src="elizadata.js"></script>
     <script language="JavaScript" type="text/javascript">
-<style>
-.chat i {
-  font-style: italic;
-}
-
-.mayorchat {
-  margin: 0px 0px 0px;
-}
-
-.baconchat {
-  margin: 0px 0px 0px;
-}
-</style>
-
 <SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">
 
 <!--
@@ -39,8 +27,8 @@ var elizaLines = new Array();
 var displayCols = 60;
 var displayRows = 20;
 
-var mayorPrefix = '<p class="mayorchat">&gt;&gt;&gt;MAYOR_9000<br>&nbsp;&nbsp;&nbsp;&nbsp;<i>';
-var baconPrefix = '<p class="baconchat">&gt;&gt;&gt;MR_BACON<br>&nbsp;&nbsp;&nbsp;&nbsp;<i>';
+var mayorPrefix = '<p class="chat chat-mayor">&gt;&gt;&gt;MAYOR_9000<br>&nbsp;&nbsp;&nbsp;&nbsp;<i>';
+var baconPrefix = '<p class="chat chat-bacon">&gt;&gt;&gt;MR_BACON<br>&nbsp;&nbsp;&nbsp;&nbsp;<i>';
 
 function elizaReset() {
 	eliza.reset();
