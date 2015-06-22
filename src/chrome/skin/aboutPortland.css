@@ -63,7 +63,7 @@ li, #warez a {
 li:hover, li:focus, li:active, #warez :hover, #warez :focus {
   color: green;
 }
-#warez a:hover, #warez a:focus, #explosives a:focus {
+#warez a:hover, #warez a:focus, .explosives a:focus {
   background: #424242;
   color: inherit;
 }
