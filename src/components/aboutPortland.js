@@ -71,12 +71,31 @@ AboutPortland.prototype =
       popup = win.open(kAboutPortlandURL,'mywindow',
               'location=no,menubar=no,resizable=no,scrollbars=no,status=no,toolbar=no,titlebar=no');
     }
-    // XXX: This doesn't work :(
-    popup.document.title = "TOR BROWSER";
-
     // cancel current load.
     channel.cancel(0x804b0002); // NS_BINDING_ABORTED
     prefs.setIntPref("browser.link.open_newwindow.restriction", 0);
+
+    let title_fixer = function () {
+      let enumerator = wm.getXULWindowEnumerator(null);
+      while(enumerator.hasMoreElements()) {
+        let xul_window = enumerator.getNext();
+        if (xul_window instanceof Ci.nsIXULWindow) {
+          xul_window.QueryInterface(Ci.nsIBaseWindow);
+          /* Hack to reset our title */
+          if (xul_window.title.search("chrome") != -1) {
+            win.setTimeout(title_fixer, 50);
+          }
+          if (xul_window.title.search("TOR BROWSER") != -1) {
+            xul_window.title = "TOR BROWSER                                                                                                                                                 ";
+          }
+        }
+      }
+    }
+   
+    /* More hacks because onload isn't available due to origin policy restrictions */ 
+    win.setTimeout(title_fixer, 100);
+    win.setTimeout(title_fixer, 500);
+    win.setTimeout(title_fixer, 1000);
 
     return channel;
   },
