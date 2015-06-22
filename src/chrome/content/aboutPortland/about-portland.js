@@ -40,7 +40,6 @@ function typewriter (element, text) {
     if (currentCount === text.length) {
       populateSearchResults();
     };
-
   };
 
   var timerId = setInterval(writeLetter, speed);
@@ -137,4 +136,3 @@ window.onload = function () {
 
   typewriter('deep-web-search-input', '"deep web fireworks"');
 };
-
