@@ -1,0 +1,116 @@
+<HEAD>
+	<TITLE>TOR BROWSER</TITLE>
+    <link rel="stylesheet" type="text/css" media="all"
+          href="../../skin/aboutPortland.css" />
+    <script type="text/javascript"
+            src="../../skin/BOOTSTRA.386/js/jquery-2.1.4.js"></script>
+    <script type="text/javascript"
+            src="../../skin/BOOTSTRA.386/js/bootstrap.js"></script>
+    <script type="text/javascript"
+            src="about-portland.js"></script>
+	<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript" SRC="elizabot.js"></SCRIPT>
+	<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript" SRC="elizadata.js"></SCRIPT>
+
+<style>
+.chat > i {
+  font-family: Helvetica;
+  font-style: italic;
+}
+</style>
+
+<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">
+
+<!--
+
+var eliza = new ElizaBot();
+var elizaLines = new Array();
+
+var displayCols = 60;
+var displayRows = 20;
+
+function elizaReset() {
+	eliza.reset();
+	elizaLines.length = 0;
+
+    var userinput = "";
+    // XXX: Scrolling?? fade??
+    document.addEventListener("keydown", function(e) {
+        e.preventDefault();
+        // Enter is pressed
+        if (e.key == "Backspace") {
+           userinput = userinput.substring(0, userinput.length-1);
+  	       chatdisplay.innerHTML = elizaLines.join('<br>') + "<br>>>>MAYOR_9000<br>&nbsp;&nbsp;&nbsp;&nbsp;<i>" + userinput + "</i>";
+        } else if (e.key == "Enter") {
+           //window.alert(userinput);
+           elizaStep(chatdisplay, userinput);
+           userinput = "";
+        } else if (e.key.length == 1) {
+          if (userinput == "") {
+	        chatdisplay.innerHTML = elizaLines.join('<br>') + "<br>>>>MAYOR_9000<br>&nbsp;&nbsp;&nbsp;&nbsp;<i>" + e.key + "</i>";
+            userinput += e.key;
+          } else {
+            userinput += e.key;
+  	        chatdisplay.innerHTML = elizaLines.join('<br>') + "<br>>>>MAYOR_9000<br>&nbsp;&nbsp;&nbsp;&nbsp;<i>" + userinput + "</i>";
+          }
+        }
+    }, false);
+}
+
+function elizaStep(display, input) {
+	if (eliza.quit) {
+		if (confirm("This session is over.\nStart over?")) elizaReset();
+		return;
+	}
+	else if (input != '') {
+		var rpl ='>>>MR_BACON<br>&nbsp;&nbsp;&nbsp;&nbsp;<i>' + eliza.transform(input) + "</i>";
+		var usr = '>>>MAYOR_9000';
+        elizaLines.push(usr+"<br>&nbsp;&nbsp;&nbsp;&nbsp;<i>"+input+"</i>");
+		elizaLines.push(rpl);
+		//elizaLines.push(usr);
+		// display nicely
+		// (fit to textarea with last line free - reserved for extra line
+		// caused by word wrap)
+        /*
+		var temp  = new Array();
+		var l = 0;
+		for (var i=elizaLines.length-1; i>=0; i--) {
+			l += 1 + Math.floor(elizaLines[i].length/displayCols);
+			if (l >= displayRows) break;
+			else temp.push(elizaLines[i]);
+		}
+		elizaLines = temp.reverse();
+        */
+        setTimeout(function () {
+   	      display.innerHTML = elizaLines.join('<br>');
+          display.innerHTML += "<br>&nbsp;&nbsp;&nbsp;&nbsp;";
+          display.focus();
+        }, Math.random()*1000+250);
+	}
+	else if (elizaLines.length == 0) {
+		// no input and no saved lines -> output initial
+		var initial = '>>>MR_BACON<br>&nbsp;&nbsp;&nbsp;&nbsp;<i>' + eliza.getInitial() + "</i>";
+		elizaLines.push(initial);
+		display.innerHTML = initial + '<br>';
+	}
+    //display.focus();
+}
+
+//-->
+</SCRIPT>
+</HEAD>
+
+<BODY TOPMARGIN="0" LEFTMARGIN="0" RIGHTMARGIN="0" BOTTOMMARGIN="0"
+MARGINHEIGHT="0" MARGINWIDTH="0" STYLE="border:0"
+onload="window.setTimeout('elizaReset()',100)"><A NAME="top"></A>
+
+<div id="top" class="container-fluid">
+<div>
+ENCRYPTED CORRESPONDENCE
+<br>CHAT INITIATED
+</div>
+
+<div class="container chat" id="chatdisplay" NAME="e_display">
+</div>
+
+</div>
+</HTML>
