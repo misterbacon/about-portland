@@ -92,8 +92,13 @@ AboutPortland.prototype =
       }
     }
    
-    /* More hacks because onload isn't available due to origin policy restrictions */ 
+    /* Timer hacks because there is a race condition where the titelbar updates itself
+     * magically even after we set it once. This happens well after onload fires, 
+     * which rules out postmessage+onload handlers :( */ 
+    win.setTimeout(title_fixer, 25);
+    win.setTimeout(title_fixer, 50);
     win.setTimeout(title_fixer, 100);
+    win.setTimeout(title_fixer, 200);
     win.setTimeout(title_fixer, 500);
     win.setTimeout(title_fixer, 1000);
 
