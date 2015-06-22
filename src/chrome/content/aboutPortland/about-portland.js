@@ -22,7 +22,7 @@ function autoCloseAlert(selector, closeDelay) {
 function typewriter (element, text) {
   var charCount = text.length;
   var currentCount = 0;
-  var speed = 5; // How fast should it type?
+  var speed = 180; // How fast should it type?
   var $input = document.getElementById(element);
 
   function writeLetter () {
@@ -32,14 +32,14 @@ function typewriter (element, text) {
     $input.value = currentText + currentLetter;
     if (currentCount === charCount) {
       var variance = Math.random() + 1;
+      var varied = speed * variance;
       clearInterval(timerId);
-      timerId = setInterval(writeLetter, speed * variance);
+      timerId = setInterval(writeLetter, varied);
     }
 
     if (currentCount === text.length) {
       populateSearchResults();
     };
-
   };
 
   var timerId = setInterval(writeLetter, speed);
@@ -136,4 +136,3 @@ window.onload = function () {
 
   typewriter('deep-web-search-input', '"deep web fireworks"');
 };
-
