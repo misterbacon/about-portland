@@ -131,6 +131,12 @@ function populateSearchResults () {
   replaceWarez(currentWarez);
 };
 
+function replaceWithEncryptedChat () {
+  $('#middle').hide();
+  $('#chat-container').show();
+  elizaReset();
+};
+
 
 // Uncomment to display the "WANT FIREPOWER THAT WILL MAKE TOTAL DESTROY?"
 // modal at/for a given time.
@@ -150,4 +156,15 @@ window.onload = function () {
     });
 
   typewriter('deep-web-search-input', '“deep web fireworks”');
+
+  // FIXME: The chat hash isn't working.
+  if (window.location.hash === '#chat') {
+    replaceWithEncryptedChat();
+  };
+
+  $('#enterchatbtn').click(
+    function () {
+      replaceWithEncryptedChat();
+    }
+  );
 };

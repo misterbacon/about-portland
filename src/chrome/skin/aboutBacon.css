@@ -8,6 +8,20 @@
   padding-bottom: 10px;
 }
 
+#chat-container {
+  display: none;
+  height: 100%;
+}
+
+#chat-scroll {
+  position: absolute;
+  overflow-y: hidden;
+  overflow-x: clip;
+  word-wrap: normal;
+  height: 54%;
+  bottom: 40px;
+}
+
 .chat {
   color: #EEE;
   padding-top: 1px;
@@ -18,20 +32,66 @@
   font-style: italic;
 }
 
-.chat .username, .chat .chat-bacon, .chat .chat-mayor {
-  margin: 0px;
-}
-
-.chat .chat-bacon-hide {
-  visibility: hidden;
-  opacity: 0;
-  margin-left: 0%;
-  transition: visibility 0s linear 0.5s, opacity 0.5s linear, margin-left 0.5s linear;
-}
-
-.chat .chat-bacon-show {
-  visibility: visible;
-  opacity: 1;
+.chat, .chat-bacon, .chat-mayor, .chat-history {
+  padding: 0px;
   margin-left: 5%;
-  transition-delay: 0.5s;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+/* Ugh... I was trying to create an overlay box for #chat-history which would
+   automatically blur elements which had been auto-scrolled out of view.
+   It is buggy and doesn't stick to the bottom of the page though
+
+.blurry {
+  position: absolute;
+  width: 100%;
+  height: 60%;
+  bottom: 10px;
+  background-color: #424242;
+  box-shadow: 0px 0px 20px 20px #424242 inset;
+} */
+  /* background: -webkit-linear-gradient(#424242, transparent); */
+  /* -webkit-background-clip: text; */
+  /* -webkit-text-fill-color: transparent; */
+
+@keyframes slide {
+  from {
+    opacity: 0;
+    margin-left: 0px;
+  }
+  to {
+    opacity: 1;
+    margin-left: 5%;
+  }
+}
+
+.chat-bacon:last-child {
+  animation-name: slide;
+  animation-timing-function: ease-in-out;
+  animation-duration: 2s;
+}
+
+blink {
+  -webkit-animation: blink 0.8s step-end infinite;
+  -moz-animation: blink 0.8s step-end infinite;
+  -o-animation: blink 0.8s step-end infinite;
+  animation: blink 0.8s step-end infinite;
+}
+
+@-webkit-keyframes blink {
+  67% { opacity: 0 }
+}
+
+@-moz-keyframes blink {
+  67% { opacity: 0 }
+}
+
+@-o-keyframes blink {
+  67% { opacity: 0 }
+}
+
+@keyframes blink {
+  67% { opacity: 0 }
 }
