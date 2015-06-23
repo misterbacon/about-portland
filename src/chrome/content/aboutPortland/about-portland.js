@@ -116,7 +116,7 @@ function populateSearchResults () {
     newWarez += '</ul>';
 
     $('#warez').replaceWith(newWarez);
-    $('.explosives').click(function () { $('#firepower').modal('show') });
+    $('#explosives').click(function () { $('#firepower').modal('show') });
   }
 
   if (query.toLowerCase().match("fire")) {
