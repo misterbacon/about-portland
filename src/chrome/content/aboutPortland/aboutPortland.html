@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<!--
+     Since this page is hidden at about:portland, which makes it inaccessible
+     to surface web search engines like Google et. al… it counts as part of
+     the dark web, right?
+  -->
 <html>
   <head>
     <!--
@@ -11,13 +16,21 @@
 
     <link rel="stylesheet" type="text/css" media="all"
           href="/skin/aboutPortland.css" />
+    <link rel="stylesheet" type="text/css" media="all"
+          href="../../skin/aboutBacon.css" />
 
     <script type="text/javascript"
             src="/skin/BOOTSTRA.386/js/jquery-2.1.4.js"></script>
     <script type="text/javascript"
             src="/skin/BOOTSTRA.386/js/bootstrap.js"></script>
+    <script language="JavaScript" type="text/javascript" src="elizabot.js"></script>
+    <script language="JavaScript" type="text/javascript" src="elizadata.js"></script>
+
     <script type="text/javascript"
             src="/content/aboutPortland/about-portland.js"></script>
+    <script type="text/javascript"
+            src="/content/aboutPortland/about-bacon.js"></script>
+
   </head>
   <body>
     <div id="top" class="container-fluid">
@@ -55,7 +68,7 @@
       </div>
       </div>
     </div> <!-- end top -->
-    <p class="cthunk" />
+    <p class="cthunk" id="cthunk1"></p>
 
     <div id="middle" class="container-fluid">
       <div class="row">
@@ -83,7 +96,7 @@
             <div class="modal-footer">
               <div id="enterchat" class="col-lg-10">
                 <button id="enterchatbtn" class="btn btn-danger" data-dismiss="modal"
-                        aria-hidden="true" href="aboutBacon.html">Enter Encrypted Chat</button>
+                        aria-hidden="true" href="#chat">Enter Encrypted Chat</button>
               </div>
             </div>
             <br />
@@ -94,8 +107,19 @@
 
     </div> <!-- end middle -->
 
-    <div id="bottom">
-    </div> <!-- end bottom -->
+    <div id="chat-container" class="container-fluid">
+      <div id="encrypted-correspondence" class="shouting">
+        ENCRYPTED CORRESPONDENCE
+      </div>
+      <div id="chat-initiated" class="shouting">
+        CHAT INITIATED
+      </div>
+      <div class="container" id="chat-scroll">
+        <div class="chat chat-history" id="chat-history"></div>
+        <div class="chat" id="chat-display" name="e_display"></div>
+        <!--<div class="container blurry" id="chat-fogger"><div>-->
+      </div>
+    </div>
 
   </body>
 </html>

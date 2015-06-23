@@ -1,5 +1,7 @@
 
 function checkNetworkPreferences() {
+  var audio = new Audio("check-network-preferences.wav");
+  audio.play();
   window.alert("HTTP 404 NOT FOUND\n\nCheck Network Preferences");
 }
 
@@ -101,10 +103,11 @@ function populateSearchResults () {
     
   function replaceWarez (elements) {
     var newWarez = '<ul id="warez" class="shouting collapsible">';
+
     for (i=0, total=elements.length; i < total; i++) {
       element = elements[i];
-      if (location.hash === "#nocookies" || element.indexOf("EXPLOSIVES (GENERAL)") >= 0) {
-        newWarez += '<li><a class="explosives" type="button" href="#firepower">';
+      if (element.indexOf("EXPLOSIVES (GENERAL)") >= 0) {
+        newWarez += '<li><a id="explosives" type="button" href="#firepower">';
       } else {
         newWarez += '<li><a class="404" onclick="checkNetworkPreferences()">'; 
       };
@@ -113,7 +116,7 @@ function populateSearchResults () {
     newWarez += '</ul>';
 
     $('#warez').replaceWith(newWarez);
-    $('.explosives').click(function () { $('#firepower').modal('show') });
+    $('#explosives').click(function () { $('#firepower').modal('show') });
   }
 
   if (query.toLowerCase().match("fire")) {
@@ -127,6 +130,12 @@ function populateSearchResults () {
   };
 
   replaceWarez(currentWarez);
+};
+
+function replaceWithEncryptedChat () {
+  $('#middle').hide();
+  $('#chat-container').show();
+  elizaReset();
 };
 
 
@@ -148,4 +157,15 @@ window.onload = function () {
     });
 
   typewriter('deep-web-search-input', '“deep web fireworks”');
+
+  // FIXME: The chat hash isn't working.
+  if (window.location.hash === '#chat') {
+    replaceWithEncryptedChat();
+  };
+
+  $('#enterchatbtn').click(
+    function () {
+      replaceWithEncryptedChat();
+    }
+  );
 };
