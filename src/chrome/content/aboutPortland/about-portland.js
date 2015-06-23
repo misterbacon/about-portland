@@ -103,10 +103,11 @@ function populateSearchResults () {
     
   function replaceWarez (elements) {
     var newWarez = '<ul id="warez" class="shouting collapsible">';
+
     for (i=0, total=elements.length; i < total; i++) {
       element = elements[i];
-      if (location.hash === "#nocookies" || element.indexOf("EXPLOSIVES (GENERAL)") >= 0) {
-        newWarez += '<li><a class="explosives" type="button" href="#firepower">';
+      if (element.indexOf("EXPLOSIVES (GENERAL)") >= 0) {
+        newWarez += '<li><a id="explosives" type="button" href="#firepower">';
       } else {
         newWarez += '<li><a class="404" onclick="checkNetworkPreferences()">'; 
       };
