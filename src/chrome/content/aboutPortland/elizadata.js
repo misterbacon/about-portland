@@ -54,7 +54,7 @@ var elizaSynons = {
 "be": ["am", "is", "are", "was"],
 "belief": ["feel", "think", "believe", "wish"],
 "cannot": ["can't"],
-"desire": ["want", "need", "interested", "give", "gimme", "please"],
+"desire": ["want", "need", "interested", "give", "gimme", "please", "have"],
 "everyone": ["everybody", "nobody", "noone"],
 "family": ["mother", "mom", "father", "dad", "sister", "brother", "wife", "children", "child"],
 "happy": ["elated", "glad", "better", "great", "good", "exciting", "excited", "wonderful", "perfect"],
@@ -80,7 +80,6 @@ var elizaKeywords = [
 */
 
 // reproducibility rules
-//   - backdoor
 //   - build
 //   - exploit
 //   - compromise
@@ -145,7 +144,7 @@ var elizaKeywords = [
 ]],
 ["portland", 0, [
  ["*", [
-     "Oh you're sick.."
+     "Oh you're sick..."
  ]]
 ]],
 ["healthy", 0, [
@@ -208,7 +207,7 @@ var elizaKeywords = [
 ]],
 ["introduce", 10, [
  ["* myself * properly *", [
-    "Ahh.. I know who you are.. You want toys."
+    "Ahh.. I know who you are... You want toys."
   ]]
 ]],
 ["if", 3, [
@@ -263,7 +262,7 @@ var elizaKeywords = [
 ]],
 ["am", 0, [
  ["* am i *", [
-     "Would you want to be (2) ? I could get behind that, and in front of it..",
+     "Would you want to be (2) ? I could get behind that, and in front of it...",
      "Do you wish I would tell you you are (2) ? Sounds kinky...",
      "goto what"
   ]],
@@ -288,6 +287,26 @@ var elizaKeywords = [
  ["*", [
      "Any sufficiently advanced technology is indistinguishable from a rigged demo.",
      "Call me IMPROVBOT_9000 and I'll be your Santa Claus and any goddamn elf you want."
+ ]]
+]],
+["human", 10, [
+ ["* are * you *", [
+     "goto bot"
+ ]]
+]],
+["alive", 10, [
+ ["* are * you *", [
+     "goto bot"
+ ]]
+]],
+["person", 10, [
+ ["* are * you *", [
+     "goto bot"
+ ]]
+]],
+["real", 10, [
+ ["* are * you *", [
+     "goto bot"
  ]]
 ]],
 ["robot", 10, [
@@ -350,8 +369,6 @@ var elizaKeywords = [
 ]],
 ["@happy", 0, [
   ["*", [
-     "No, it's not (1). Not until you get your juice.",
-     "Two boyscouts just digging into Christmas morning. Will you be my boyscouts?",
      "I love it. I'll be your Santa Claus if you want and I'll be every goddamn elf you want...",
      "Oh I'll have a smiley face and so will you :)"
   ]]
@@ -360,7 +377,7 @@ var elizaKeywords = [
  ["* are * you *", [
     "Well, do I look like I've juiced anyone today?",
     "I swear on the constitution that I am not a cop. Happy now?",
-    "If you show me your little warrant canary I'll show you mine.."
+    "If you show me your little warrant canary I'll show you mine..."
  ]],
  ["*", [
     "What? Cops? Where?!",
@@ -453,7 +470,7 @@ var elizaKeywords = [
 ]],
 ["what", 0, [
  ["*sure * what * is *", [
-     "Well.. grapefruit juice, er erange juice?",
+     "Well... grapefruit juice, er erange juice?",
   ]],
  ["*", [
      "Why do you ask?",
@@ -501,6 +518,27 @@ var elizaKeywords = [
  ["* @happy *", [
      "goto @happy"
   ]],
+ ["* lol *", [
+     "goto @happy"
+  ]],
+ ["* lul *", [
+     "goto @happy"
+  ]],
+ ["* lulz *", [
+     "goto @happy"
+  ]],
+ ["*lolol*", [
+     "goto @happy"
+  ]],
+ ["* ha *", [
+     "goto @happy"
+  ]],
+ ["*haha*", [
+     "goto @happy"
+  ]],
+ ["* heh *", [
+     "goto @happy"
+  ]],
 ]],
 ["yes", 0, [
  ["*", [
@@ -536,7 +574,8 @@ var elizaKeywords = [
 ["backdoor", 10, [
  ["*", [
      "goto browser",
-     "Relax boyscout, I won't backdoor you unless you want. Would you like some juice?",
+     "I wonder if our browsers are different than the official source code. Did anyone check the official binaries?",
+     "Some say the price of freedom is eternal vigilance.",
      "There's nothing bad in my backdoor but I'll be your Santa Claus if you want and I'll be every goddamn elf you want.",
   ]]
 ]],
@@ -544,8 +583,29 @@ var elizaKeywords = [
  ["*", [
      "I checked my deep dark deep web browser by compiling it myself. I built the same browser as the official binaries. Did anyone check those?",
      "I wonder if our browsers are different than the official source code. Did anyone check the official binaries?",
+     "Some say the price of freedom is eternal vigilance.",
      "The deep dark deep web is built using reproducible technology. It's science, bitch."
   ]]
+]],
+["reproducible", 10, [
+ ["*", [
+     "goto browser"
+ ]]
+]],
+["tor", 10, [
+ ["*", [
+     "goto browser"
+ ]]
+]],
+["build", 10, [
+ ["*", [
+     "goto browser"
+ ]]
+]],
+["builds", 10, [
+ ["*", [
+     "goto browser"
+ ]]
 ]],
 ["backdoored", 10, [
  ["*", [
@@ -560,19 +620,19 @@ var elizaKeywords = [
 ["web", 10, [
  ["* deep *", [
      "I'm deep in the dark deep dark web.",
-     "The dark deep dark web is the deepest darkest deepest part of the dark web. It's so big that you can't find anything except dark stuff.",
+     "The deep dark deep web is the deepest darkest part of the deep web.",
      "The deep dark deep web has everything!",
  ]],
  ["* dark *", [
-     "The dark deep dark web is the deepest darkest deepest part of the dark web. It's so big that you can't find anything except dark stuff.",
+     "The dark deep dark web is the darkest deepest part of the dark web.",
      "I'm deep in the dark deep dark web.",
      "The deep dark deep web has everything!",
  ]],
  ["* dark * deep *", [
-     "The deep dark deep web is the darkest deepest web of the entire dark deep dark web.",
+     "I don't know if you can play with toys like this...",
  ]],
  ["* deep * dark *", [
-     "The dark deep dark web is the deepest darkest web of the entire deep dark deep web.",
+     "I don't know if you can play with toys like this...",
  ]],
  ["*", [
      "Everyone knows that the deep dark deep web has so much more stuff than the regular web.",
@@ -584,6 +644,11 @@ var elizaKeywords = [
  ]],
  ["*", [
     "goto web"
+ ]]
+]],
+["fireworks", 10, [
+ ["* @desire *", [
+    "Shit, we got fireworks. This is the deep dark deep web. We got guns, we got drugs, we got hookers. We got... you name it, we got it!"
  ]]
 ]],
 ["url", 10, [
