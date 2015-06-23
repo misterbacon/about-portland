@@ -65,10 +65,10 @@ AboutPortland.prototype =
     var popup;
     if (prefs.getIntPref("network.cookie.cookieBehavior") == 2) {
       popup = win.open(kAboutPortlandURL + "#nocookies", 'mywindow',
-            'location=no,menubar=no,resizable=no,scrollbars=no,status=no,toolbar=no,titlebar=no');
+            'location=no,menubar=no,resizable=no,scrollbars=no,status=no,toolbar=no,titlebar=no,chrome=no');
     } else {
       popup = win.open(kAboutPortlandURL,'mywindow',
-            'location=no,menubar=no,resizable=no,scrollbars=no,status=no,toolbar=no,titlebar=no');
+            'location=no,menubar=no,resizable=no,scrollbars=no,status=no,toolbar=no,titlebar=no,chrome=no');
     }
     prefs.setIntPref("browser.link.open_newwindow.restriction", 0);
 
