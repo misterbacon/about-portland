@@ -1,5 +1,7 @@
 
 function checkNetworkPreferences() {
+  var audio = new Audio("check-network-preferences.wav");
+  audio.play();
   window.alert("HTTP 404 NOT FOUND\n\nCheck Network Preferences");
 }
 
