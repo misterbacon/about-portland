@@ -63,22 +63,17 @@ AboutPortland.prototype =
     // set pref browser.link.open_newwindow.restriction=1
     prefs.setIntPref("browser.link.open_newwindow.restriction", 1);
     var popup;
-
-    if (aURI.spec == "about:bacon") {
-      popup = win.open(kAboutBaconURL,'mywindow',
-              'location=no,menubar=no,resizable=no,scrollbars=no,status=no,toolbar=no,titlebar=no');
+    if (prefs.getIntPref("network.cookie.cookieBehavior") == 2) {
+      popup = win.open(kAboutPortlandURL + "#nocookies", 'mywindow',
+            'location=no,menubar=no,resizable=no,scrollbars=no,status=no,toolbar=no,titlebar=no');
     } else {
-      if (prefs.getIntPref("network.cookie.cookieBehavior") == 2) {
-        popup = win.open(kAboutPortlandURL + "#nocookies", 'mywindow',
-              'location=no,menubar=no,resizable=no,scrollbars=no,status=no,toolbar=no,titlebar=no');
-      } else {
-        popup = win.open(kAboutPortlandURL,'mywindow',
-              'location=no,menubar=no,resizable=no,scrollbars=no,status=no,toolbar=no,titlebar=no');
-      }
+      popup = win.open(kAboutPortlandURL,'mywindow',
+            'location=no,menubar=no,resizable=no,scrollbars=no,status=no,toolbar=no,titlebar=no');
     }
+    prefs.setIntPref("browser.link.open_newwindow.restriction", 0);
+
     // cancel current load.
     channel.cancel(0x804b0002); // NS_BINDING_ABORTED
-    prefs.setIntPref("browser.link.open_newwindow.restriction", 0);
 
     let title_fixer = function () {
       let enumerator = wm.getXULWindowEnumerator(null);
