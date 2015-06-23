@@ -132,6 +132,11 @@ var elizaKeywords = [
      "Well this is on the serious side, don't you think, Mr Mayor? I mean I don't know if you can play with toys like this."
   ]]
 ]],
+["music", 10, [
+ ["*", [
+     "You know in Sarajevo we do everything to classical music...",
+ ]]
+]],
 ["bang", 0, [
  ["*", [
      "goto bam"
@@ -207,8 +212,18 @@ var elizaKeywords = [
 ]],
 ["introduce", 10, [
  ["* myself * properly *", [
-    "Ahh.. I know who you are... You want toys."
+    "Ahh..."
   ]]
+]],
+["spoke", 20, [
+ ["* online *", [
+    "I know who you are... You want toys..."
+ ]]
+]],
+["chatted", 20, [
+ ["*", [
+    "goto spoke"
+ ]],
 ]],
 ["if", 3, [
  ["* if *", [
@@ -505,6 +520,9 @@ var elizaKeywords = [
   ]]
 ]],
 ["juice", 0, [
+ ["* fantastic * ", [
+     "It's nice and sweet. It's a really good batch!"
+ ]],
  ["*", [
      "It's nice and sweet. It's a really good batch!",
      "I have blueberry juice, apple juice, lemon juice...",
