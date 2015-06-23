@@ -2,11 +2,6 @@
 #encrypted-correspondence {
   line-height: 100%;
 }
-#chat-initiated {
-  color: #AAA;
-  font-size: 130%;
-  padding-bottom: 10px;
-}
 
 #chat-container {
   display: none;

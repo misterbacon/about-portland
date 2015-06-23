@@ -131,6 +131,11 @@ iframe.embedded {
   color: #DDD;
 }
 
+#chat-initiated {
+  color: #AAA;
+  font-size: 210%;
+  padding-bottom: 10px;
+}
 
 @media (min-width: 1px) and (max-width: 980px) {
   #warez { height: auto; }
@@ -139,18 +144,21 @@ iframe.embedded {
 
 @media (min-width: 640px) and (max-width: 980px) {
   #search, #search-label, #deep-web-search-input, #encrypted-correspondence { font-size: 30px; }
+  #chat-initiated { font-size: 120%; }
   #deep-web-search-input { height: 50px; }
   li > a { font-size: 1.8em; }
 }
 
 @media (min-width: 50px) and (max-width: 640px) {
   #search, #search-label, #deep-web-search-input, #encrypted-correspondence { font-size: 20px; }
+  #chat-initiated { font-size: 100%; }
   #deep-web-search-input { height: 40px; }
   li > a { font-size: 1.6em; }
 }
 
 @media (min-width: 50px) and (max-width: 480px), handheld {
   #search, #search-label, #deep-web-search-input, #encrypted-correspondence { font-size: 15px; }
+  #chat-initiated { font-size: 75%; }
   #deep-web-search-input { height: 40px; }
   li > a { font-size: 1.4em; }
   #results { font-size: 70%;}
