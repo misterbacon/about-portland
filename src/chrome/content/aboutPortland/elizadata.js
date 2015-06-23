@@ -369,8 +369,6 @@ var elizaKeywords = [
 ]],
 ["@happy", 0, [
   ["*", [
-     "No, it's not (1). Not until you get your juice.",
-     "Two boyscouts just digging into Christmas morning. Will you be my boyscouts?",
      "I love it. I'll be your Santa Claus if you want and I'll be every goddamn elf you want...",
      "Oh I'll have a smiley face and so will you :)"
   ]]
@@ -518,6 +516,27 @@ var elizaKeywords = [
      "goto @desire"
   ]],
  ["* @happy *", [
+     "goto @happy"
+  ]],
+ ["* lol *", [
+     "goto @happy"
+  ]],
+ ["* lul *", [
+     "goto @happy"
+  ]],
+ ["* lulz *", [
+     "goto @happy"
+  ]],
+ ["*lolol*", [
+     "goto @happy"
+  ]],
+ ["* ha *", [
+     "goto @happy"
+  ]],
+ ["*haha*", [
+     "goto @happy"
+  ]],
+ ["* heh *", [
      "goto @happy"
   ]],
 ]],
